@@ -1,0 +1,4 @@
+<assets>
+  <output mode="c" filename="code/assets.h" fileList="g_fileNames" pathprefix="assets/"/>
+  <asset source="assets/exported/dummy.lua" symbol="dummy"/>
+</assets>

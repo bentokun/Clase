@@ -1,0 +1,14 @@
+syntax: glob
+
+*.db
+*.bak
+*.sdf
+*.suo
+*.phyre
+*.opensdf
+
+syntax: regexp
+
+bin/*
+ipch/*
+build/*

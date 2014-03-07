@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="D3D11DebugOpt|PS3">
+      <Configuration>D3D11DebugOpt</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11DebugOpt|PSVita">
+      <Configuration>D3D11DebugOpt</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11DebugOpt|Win32">
+      <Configuration>D3D11DebugOpt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11DebugOpt|x64">
+      <Configuration>D3D11DebugOpt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Debug|PS3">
+      <Configuration>D3D11Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Debug|PSVita">
+      <Configuration>D3D11Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Debug|Win32">
+      <Configuration>D3D11Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Debug|x64">
+      <Configuration>D3D11Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Release|PS3">
+      <Configuration>D3D11Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Release|PSVita">
+      <Configuration>D3D11Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Release|Win32">
+      <Configuration>D3D11Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="D3D11Release|x64">
+      <Configuration>D3D11Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebugOpt|PS3">
+      <Configuration>GLDebugOpt</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebugOpt|PSVita">
+      <Configuration>GLDebugOpt</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebugOpt|Win32">
+      <Configuration>GLDebugOpt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebugOpt|x64">
+      <Configuration>GLDebugOpt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebug|PS3">
+      <Configuration>GLDebug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebug|PSVita">
+      <Configuration>GLDebug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebug|Win32">
+      <Configuration>GLDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLDebug|x64">
+      <Configuration>GLDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLRelease|PS3">
+      <Configuration>GLRelease</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLRelease|PSVita">
+      <Configuration>GLRelease</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLRelease|Win32">
+      <Configuration>GLRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GLRelease|x64">
+      <Configuration>GLRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugOpt|PS3">
+      <Configuration>DebugOpt</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugOpt|PSVita">
+      <Configuration>DebugOpt</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugOpt|Win32">
+      <Configuration>DebugOpt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugOpt|x64">
+      <Configuration>DebugOpt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|PS3">
+      <Configuration>Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|PSVita">
+      <Configuration>Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebugOpt|PS3">
+      <Configuration>PS3SNCDebugOpt</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebugOpt|PSVita">
+      <Configuration>PS3SNCDebugOpt</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebugOpt|Win32">
+      <Configuration>PS3SNCDebugOpt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebugOpt|x64">
+      <Configuration>PS3SNCDebugOpt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebug|PS3">
+      <Configuration>PS3SNCDebug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebug|PSVita">
+      <Configuration>PS3SNCDebug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebug|Win32">
+      <Configuration>PS3SNCDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCDebug|x64">
+      <Configuration>PS3SNCDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCRelease|PS3">
+      <Configuration>PS3SNCRelease</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCRelease|PSVita">
+      <Configuration>PS3SNCRelease</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCRelease|Win32">
+      <Configuration>PS3SNCRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PS3SNCRelease|x64">
+      <Configuration>PS3SNCRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PS3">
+      <Configuration>Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PSVita">
+      <Configuration>Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\common\PhyreCommon.h" />
+    <ClInclude Include="code\common\PhyreCommonAnimation.h" />
+    <ClInclude Include="code\common\PhyreCommonCluster.h" />
+    <ClInclude Include="code\common\PhyreCommonDebug.h" />
+    <ClInclude Include="code\common\PhyreCommonDialogs.h" />
+    <ClInclude Include="code\common\PhyreCommonFIOS.h" />
+    <ClInclude Include="code\common\PhyreCommonGameSprite.h" />
+    <ClInclude Include="code\common\PhyreCommonLevel.h" />
+    <ClInclude Include="code\common\PhyreCommonScene.h" />
+    <ClInclude Include="code\common\PhyreCommonScripting.h" />
+    <ClInclude Include="code\common\PhyreCommonTexture.h" />
+    <ClInclude Include="code\Main.hpp" />
+    <ClInclude Include="code\assets.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="code\common\PhyreCommonAnimation.cpp" />
+    <ClCompile Include="code\common\PhyreCommonDebug.cpp" />
+    <ClCompile Include="code\common\PhyreCommonDialogs.cpp" />
+    <ClCompile Include="code\common\PhyreCommonFIOS.cpp" />
+    <ClCompile Include="code\common\PhyreCommonGameSprite.cpp" />
+    <ClCompile Include="code\common\PhyreCommonScene.cpp" />
+    <ClCompile Include="code\common\PhyreCommonScripting.cpp" />
+    <ClCompile Include="code\common\PhyreCommonTexture.cpp" />
+    <ClCompile Include="code\Main.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{43319CF4-094A-11E1-937C-54F74724019B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Basic</RootNamespace>
+    <ProjectName>Project</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(VisualStudioVersion)'=='11.0' and ('$(Platform)'=='Win32' or '$(Platform)'=='x64')">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Platform)'=='PS3'">
+    <PlatformToolset>GCC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Platform)'=='PS3' and ('$(Configuration)'=='PS3SNCDebug' or '$(Configuration)'=='PS3SNCDebugOpt' or '$(Configuration)'=='PS3SNCRelease' or '$(Configuration)'=='PS3SNCPackage')">
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\..\Build\Props\PhyreCommon.props" />
+    <Import Project="..\..\Build\Props\PhyreApp.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(VisualStudioVersion)'=='' or '$(VisualStudioVersion)'=='10.0'">
+    <IntDir>$(ProjectDir)build\$(Configuration)_$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(VisualStudioVersion)'=='11.0'">
+    <IntDir>$(SCE_PHYRE)\Lib\Intermediate\vs2012\Samples\$(ProjectName)\$(Configuration)_$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Platform)'=='PS3' or '$(Platform)'=='PSVita'">
+    <IntDir>$(SCE_PHYRE)\Lib\Intermediate\Samples\$(ProjectName)\$(Configuration)_$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D11DebugOpt|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D11Debug|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D11Release|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GLDebugOpt|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GLDebug|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GLRelease|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugOpt|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3SNCDebugOpt|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3SNCDebug|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3SNCRelease|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D11DebugOpt|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D11Debug|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D11Release|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GLDebugOpt|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GLDebug|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GLRelease|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugOpt|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3SNCDebugOpt|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3SNCDebug|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PS3SNCRelease|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32' or '$(Platform)'=='x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProgramDataBaseFileName>$(IntDir)$(TargetFileName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='PSVita'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <PhyreAssetGatherTask Include="Assets.xml">
+      <SubType>Designer</SubType>
+    </PhyreAssetGatherTask>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\PhyreCore.vcxproj">
+      <Project>{5201fe7c-03e6-11e1-b01c-997d4824019b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\PhyreFramework.vcxproj">
+      <Project>{6720c73c-092e-11e1-b4cb-44d24724019b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <UsingTask TaskName="PhyreTasks.PhyreAssetGatherTask" AssemblyFile="$(SCE_PHYRE)\Tools\Phyre.Build.Tasks.dll" />
+  <Target Name="BeforeBuild" BeforeTargets="Midl" AfterTargets="CustomBuild">
+    <Message Importance="High" Text="Running PhyreAssetGatherTask for @(PhyreAssetGatherTask)" />
+    <PhyreAssetGatherTask Platform="$(Platform)" Configuration="$(Configuration)" IntermediateDir="$(IntDir)" AssetFiles="@(PhyreAssetGatherTask)" />
+  </Target>
+</Project>

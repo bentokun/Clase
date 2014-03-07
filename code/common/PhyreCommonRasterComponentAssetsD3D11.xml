@@ -1,0 +1,8 @@
+<assets>
+  <output mode="c" filename="PhyreSamplesCommonRasterComponentAssets.h" fileList="g_rasterFileNames" pathprefix="Media/"/>
+  <asset source="%SCE_PHYRE%/Media/Samples/Scripting/raster.fx" symbol="g_rasterShaderIndex"/>
+  <asset source="%SCE_PHYRE%/Media/Samples/Scripting/raster_decay.fx" symbol="g_rasterDecayShaderIndex"/>
+  <asset source="%SCE_PHYRE%/Media/Samples/Scripting/textures/raster_dot_round.dds" symbol="g_roundRasterDotTextureIndex"/>
+  <asset source="%SCE_PHYRE%/Media/Samples/Scripting/textures/raster_dot_square.dds" symbol="g_squareRasterDotTextureIndex"/>
+  <asset source="%SCE_PHYRE%/Media/Samples/Scripting/textures/raster_dot_cell.dds" symbol="g_cellRasterDotTextureIndex"/>
+</assets> 

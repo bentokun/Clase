@@ -1,0 +1,122 @@
+/* SCE CONFIDENTIAL
+PhyreEngine(TM) Package 3.7.0.0
+* Copyright (C) 2013 Sony Computer Entertainment Inc.
+* All Rights Reserved.
+*/
+
+#include "PhyreShaderPlatform.h"
+#include "PhyreSceneWideParameters.h"
+sampler2D DepthBuffer;
+sampler2D ColorBuffer;
+sampler2D SSAOBuffer;
+
+///////////////////////////////////////////////////////////////
+// structures /////////////////////
+///////////////////////////////////////////////////////////////
+
+struct FullscreenVertexIn
+{
+	float3 vertex		: POSITION;
+	float2 uv			: TEXCOORD0;
+};
+
+struct FullscreenVertexOut
+{
+	float4 position		: POSITION;
+	float2 uv			: TEXCOORD0;
+};
+struct FullscreenFragIn
+{
+	float2	uv			: TEXCOORD0;
+};
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+FullscreenVertexOut FullscreenVP(FullscreenVertexIn input)
+{
+	FullscreenVertexOut output;
+
+	output.position = float4(input.vertex.xy, 1, 1);
+	output.uv = input.uv;
+
+	return output;
+}
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+// Convert a depth value from post projection space to view space. 
+float ConvertDepth(float depth)
+{	
+	float viewSpaceZ = -(scene.cameraNearTimesFar / (depth * scene.cameraFarMinusNear - scene.cameraNearFar.y));
+
+	return viewSpaceZ;
+}
+
+// Read value from a depth map and convert it to float.
+float ReadDepth( sampler2D depthMap, float2 uv )
+{
+    float3 zBuffer_fragment = saturate( tex2D( depthMap, uv.xy ).xyz );
+    float3 depth_factor_precise = float3(65536.0/16777215.0, 256.0/16777215.0, 1.0/16777215.0);
+    zBuffer_fragment = round(zBuffer_fragment * 255.0);
+	float currentDepth = dot( zBuffer_fragment, depth_factor_precise);
+    return currentDepth;
+}
+float TexDepth(sampler2D depthMap, float2 uv)
+{
+	return dot(tex2D(depthMap,uv).xyz, ((float3(65536, 256, 1)*255.0f) / 16777215.0f));	
+}
+
+float4 ApplySSAOFP(FullscreenFragIn input) : FRAG_OUTPUT_COLOR
+{	
+	half4 colorValue = h4tex2D(ColorBuffer, input.uv);
+
+	float2 dxy = scene.screenWidthHeightInv * 2.0f;
+
+	half4 ssaoValue0 = h4tex2D(SSAOBuffer, input.uv + float2(-dxy.x, 0.0f));
+	half4 ssaoValue1 = h4tex2D(SSAOBuffer, input.uv + float2( dxy.x, 0.0f));
+	half4 ssaoValue2 = h4tex2D(SSAOBuffer, input.uv + float2( 0.0f,-dxy.y));
+	half4 ssaoValue3 = h4tex2D(SSAOBuffer, input.uv + float2( 0.0f, dxy.y));
+	half4 ssaoValue = h4tex2D(SSAOBuffer, input.uv);
+
+	ssaoValue = (ssaoValue*0.4f) + (ssaoValue0+ssaoValue1+ssaoValue2+ssaoValue3)*0.25f*0.6f;
+
+	return colorValue * ssaoValue.w;
+}
+half4 CopyBufferFP(FullscreenFragIn input) : FRAG_OUTPUT_COLOR0
+{
+	return h4tex2D(ColorBuffer,input.uv);
+}
+
+
+
+
+
+technique ApplySSAO
+{
+	pass p0
+	{
+		VertexProgram = compile arbvp1 FullscreenVP();
+		FragmentProgram = compile arbfp1 ApplySSAOFP();	
+		colorMask = bool4(true,true,true,true);
+		cullFaceEnable = false;
+		depthTestEnable = false;
+		depthMask = false;
+	}
+}
+
+technique CopyBuffer
+{
+	pass p1
+	{
+		VertexProgram = compile arbvp1 FullscreenVP();
+		FragmentProgram = compile arbfp1 CopyBufferFP();	
+		colorMask = bool4(true,true,true,true);
+		cullFaceEnable = false;
+		depthTestEnable = false;
+		depthMask = false;
+		blendEnable = false;
+	}
+}

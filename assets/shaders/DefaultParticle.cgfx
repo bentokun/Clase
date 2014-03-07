@@ -1,0 +1,78 @@
+/* SCE CONFIDENTIAL
+PhyreEngine(TM) Package 3.7.0.0
+* Copyright (C) 2013 Sony Computer Entertainment Inc.
+* All Rights Reserved.
+*/
+
+// Default implementation of a shader required by a sprite particle emitter.
+
+#include "PhyreShaderPlatform.h"
+#include "PhyreSceneWideParameters.h"
+
+float4x4 WorldViewProjection		: WorldViewProjection;	
+
+///////////////////////////////////////////////////////////////
+// structures /////////////////////
+///////////////////////////////////////////////////////////////
+
+struct ParticleVertexIn
+{
+	float3 Position		: POSITION;
+	float2 Texcoord 	: TEXCOORD0;
+};
+
+struct ParticleVertexOut
+{
+	float4 position		: POSITION;
+	float2 Texcoord 	: TEXCOORD0;	
+};
+struct ParticleFragIn
+{
+	float2 Texcoord 	: TEXCOORD0;
+};
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+ParticleVertexOut RenderParticlesVP(ParticleVertexIn input)
+{
+	ParticleVertexOut output;
+	float4 localPosition = float4(input.Position.xyz,1.0f);	
+	
+	output.position = mul(WorldViewProjection, localPosition);
+	output.Texcoord = input.Texcoord;
+
+	return output;
+}
+
+
+half4 RenderParticlesFP(ParticleFragIn input) : FRAG_OUTPUT_COLOR0
+{
+	half2 p = input.Texcoord * 2.0f - 1.0f;
+	half a = length(p * 0.6);
+	a = saturate(1.0 - a);
+	a = a * a;
+	a = a * a;
+
+	return half4(1.0,1.0,1.0,a);
+}
+
+
+technique Transparent
+{
+	pass p0
+	{
+		VertexProgram = compile vp40 RenderParticlesVP();
+		FragmentProgram = compile fp40 RenderParticlesFP();	
+		colorMask = bool4(true,true,true,true);
+		cullFaceEnable = false;
+		depthTestEnable = true;
+		depthFunc = lessEqual;
+		depthMask = false;
+		blendEnable = true;
+		blendFunc = {srcAlpha, oneMinusSrcAlpha};
+	}
+}
+
+
